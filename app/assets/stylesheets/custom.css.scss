@@ -159,6 +159,25 @@ input {
   height: auto !important;
 }
 
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+  input[type="checkbox"] {
+    margin-left: 0;
+  }
+
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
 #error_explanation {
   color: red;
 
