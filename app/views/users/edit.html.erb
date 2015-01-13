@@ -2,7 +2,10 @@
 <h1>Update your profile</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= render 'users/form' %>
+    <%= form_for @user do |f| %>
+      <%= render 'users/fields', f: f %>
+      <%= f.submit "Update my account", class: "btn btn-primary" %>
+    <% end %>
 
     <div class="gravatar_edit">
       <%= gravatar_for @user%>
