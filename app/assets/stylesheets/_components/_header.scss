@@ -1,0 +1,83 @@
+$headerHeight: 50px;
+
+body {
+  padding-top: $headerHeight;
+}
+
+.header {
+
+  @include clearfix;
+  background-color: $colorBlueGrey;
+  color: $colorBlueGrey100;
+  height: $headerHeight;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $colorBlueGrey50;
+    }
+  }
+
+  .logo {
+    color: $colorBlueGrey100;
+    float: left;
+    line-height: $headerHeight;
+    padding: 0 $gapBase;
+  }
+
+  .nav {
+    float: left;
+    padding: 0 1rem;
+
+    .list--inline {
+      font-size: 16px;
+
+      > li {
+        padding: {
+          left: $gapBase;
+          right: $gapBase;
+        }
+
+        > a {
+          display: block;
+          line-height: $headerHeight;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .search-box {
+  }
+
+  .user-nav {
+    float: left;
+
+    > a {
+      display: inline-block;
+      line-height: $headerHeight;
+      padding: {
+        left: $gapBase;
+        right: $gapBase;
+      }
+    }
+  }
+}
+
+.header__left {
+  float: left;
+}
+
+.header__center {
+
+}
+
+.header__right {
+  float: right;
+}

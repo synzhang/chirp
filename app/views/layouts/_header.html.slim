@@ -1,0 +1,23 @@
+header.header
+  .header__left
+    = link_to "Chirp", root_path, class: "logo"
+    nav.nav
+      ul.list--inline
+        li = link_to "Home", root_path
+        li = link_to "Trends", "#"
+  .header__right
+    .user-nav
+      - if logged_in?
+        = link_to "Users", users_path
+        .dropdown
+          a.dropdown-toggle href="#" data-toggle="dropdown"
+            | Account
+            b.caret
+          ul.dropdown-menu
+            li = link_to "Profile", current_user
+            li = link_to "Settings", edit_user_path(current_user)
+            li.divider
+            li
+              = link_to "Log out", logout_path, method: "delete"
+      - else
+        = link_to "Log in", login_path, class: "pull-left"
