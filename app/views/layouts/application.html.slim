@@ -2,9 +2,9 @@ doctype html
 html
   head
     title = full_title(yield(:title))
-    = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
-    = render 'layouts/shim'
+    = render 'layouts/browsehappy'
+    = stylesheet_link_tag 'application', media: 'all'
   body
     = render 'layouts/header'
     .wrapper
