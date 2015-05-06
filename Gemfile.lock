@@ -232,8 +232,6 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    turbolinks (2.3.0)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -276,7 +274,6 @@ DEPENDENCIES
   spring (= 1.1.3)
   sqlite3 (= 1.3.9)
   susy
-  turbolinks (= 2.3.0)
   uglifier (= 2.5.3)
   unicorn (= 4.8.3)
   web-console (= 2.0.0.beta3)
