@@ -14,6 +14,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: $zindexHeader;
 
   a {
     color: inherit;
@@ -39,15 +40,19 @@ body {
       font-size: 16px;
 
       > li {
-        padding: {
-          left: $gapBase;
-          right: $gapBase;
-        }
-
         > a {
           display: block;
           line-height: $headerHeight;
+          padding: {
+            left: $gapBase;
+            right: $gapBase;
+          }
           text-align: center;
+
+          &:hover {
+            background-color: $colorBlueGrey800;
+            color: #fff;
+          }
         }
       }
     }
@@ -59,25 +64,34 @@ body {
   .user-nav {
     float: left;
 
-    > a {
-      display: inline-block;
+    > a,
+    .dropdown__toggle {
       line-height: $headerHeight;
       padding: {
         left: $gapBase;
         right: $gapBase;
       }
     }
+
+    > a {
+      display: inline-block;
+    }
+
+    .dropdown {
+      display: inline-block;
+    }
+
+    .dropdown__toggle {
+      display: block;
+    }
+
+    .dropdown__menu {
+      left: auto;
+      right: 0;
+
+      > li {
+        padding-left: 0;
+      }
+    }
   }
-}
-
-.header__left {
-  float: left;
-}
-
-.header__center {
-
-}
-
-.header__right {
-  float: right;
 }
