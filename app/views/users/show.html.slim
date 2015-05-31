@@ -1,0 +1,11 @@
+- provide :title, @user.name
+- page_css 'user'
+
+aside
+  = render 'shared/profile_small'
+main
+  h1 Feeds
+  - if @user.microposts.any?
+    ol.microposts
+      = render @microposts
+    = will_paginate @microposts

@@ -1,0 +1,72 @@
+@import 'utils/utils';
+
+html.users_new,
+html.users_create,
+html.users_edit,
+html.sessions_new,
+html.sessions_create,
+html.password_resets_new,
+html.password_resets_create {
+  .wrapper {
+    @include container;
+  }
+
+  form {
+    @include clearfix;
+
+    .flash {
+      @include span(6);
+      @include push(3);
+      margin-bottom: gutter();
+    }
+  }
+
+  .form__group,
+  .form__checkbox,
+  .form__actions {
+    @include span(6);
+    @include push(3);
+  }
+
+  .form__group {
+    margin-bottom: gutter();
+
+    > label {
+      @include span(1 of 6);
+      line-height: 34px;
+      text-align: right;
+    }
+
+    .form__control {
+      @include span(last 5 of 6);
+    }
+  }
+
+  .form__checkbox {
+    > label {
+      @include span(last 5 of 6);
+      @include push(1 of 6);
+    }
+  }
+
+  .form__actions {
+    padding: {
+      bottom: gutter();
+      top: gutter();
+    }
+
+    > .button {
+      @include span(4 of 6);
+      @include push(1 of 6);
+      margin: {
+        bottom: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .separator {
+    color: $colorGrayLighter;
+    padding: 0 1em;
+  }
+}

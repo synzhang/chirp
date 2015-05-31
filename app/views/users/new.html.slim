@@ -1,0 +1,10 @@
+- provide :title, 'Sign up'
+- page_css 'simple_form'
+
+header.page-header
+  h3.xlarge.text-divider Sign up
+
+= form_for @user do |f|
+  = render 'users/fields',f: f
+  .form__actions
+    = f.submit "Create my account", class: "button button--primary"

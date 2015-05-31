@@ -1,0 +1,10 @@
+- provide :title, 'All users'
+- page_css 'users_index'
+
+header.page-header
+  h3.xlarge.text-divider All users
+
+ul.users
+  = render @users
+footer
+  = will_paginate

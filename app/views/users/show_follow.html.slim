@@ -1,0 +1,11 @@
+- provide :title, @title
+- page_css 'users_follow'
+
+aside
+  = render 'shared/profile_small'
+main
+  h1 = @title
+  - if @users.any?
+    ul.users
+      = render @users
+    = will_paginate

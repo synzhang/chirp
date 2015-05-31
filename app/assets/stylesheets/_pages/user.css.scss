@@ -1,0 +1,23 @@
+@import 'utils/utils';
+
+html.users_show {
+  .wrapper {
+    @include container;
+
+    > aside {
+      @include span(3);
+    }
+
+    > main {
+      @include span(last 9);
+
+      > h1 {
+        font-size: $fontMedium;
+        font-weight: bold;
+        margin-bottom: 1em;
+        line-height: 26px;
+        padding: 0;
+      }
+    }
+  }
+}

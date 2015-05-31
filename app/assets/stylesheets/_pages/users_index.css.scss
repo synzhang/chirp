@@ -1,0 +1,25 @@
+@import 'utils/utils';
+
+html.users_index {
+  .wrapper {
+    @include container;
+
+    > footer {
+      @include clearfix;
+      padding: gutter() 0;
+
+      .pagination {
+        float: right;
+      }
+    }
+  }
+
+  .users {
+    @include clearfix;
+
+    > li {
+      @include gallery(4);
+      margin-bottom: gutter();
+    }
+  }
+}

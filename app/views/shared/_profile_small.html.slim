@@ -1,0 +1,20 @@
+- @user ||= current_user
+
+section.profile--small
+  .profile__user
+    = link_to gravatar_for(@user, size: 80), @user, class: "profile__avatar"
+    .profile__name
+      strong = @user.name
+      em = @user.name
+  .profile__stats
+    = link_to @user, class: "stat"
+      span Microposts
+      strong = @user.microposts.count
+    = link_to following_user_path(@user), class: "stat"
+      span Following
+      strong = @user.following.count
+    = link_to followers_user_path(@user), class: "stat"
+      span Followers
+      strong = @user.followers.count
+  - if logged_in?
+    .profile__actions = render 'users/follow_form'

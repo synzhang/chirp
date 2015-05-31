@@ -1,0 +1,9 @@
+- if object.errors.any?
+  .flash.flash--danger
+    p
+      | The form contains&nbsp;
+      = pluralize(object.errors.count, "error")
+      | .
+    ul.list--normalized
+      - object.errors.full_messages.each do |msg|
+        li = msg

@@ -1,0 +1,12 @@
+- provide :title, 'Forgot password'
+- page_css 'simple_form'
+
+header.page-header
+  h3.xlarge.text-divider Forgot password
+
+= form_for(:password_reset, url: password_resets_path) do |f|
+  .form__group
+    = f.label :email
+    = f.text_field :email, class: 'form__control'
+  .form__actions
+    = f.submit 'Submit', class: 'button button--primary'

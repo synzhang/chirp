@@ -1,0 +1,24 @@
+- provide :title, 'Log in'
+- page_css 'simple_form'
+
+header.page-header
+  h3.xlarge.text-divider Log in
+  
+= form_for :session, url: login_path do |f|
+  .form__group
+    = f.label :email
+    = f.text_field :email, class: "form__control"
+  .form__group
+    = f.label :password
+    = f.password_field :password, class: "form__control"
+  .form__checkbox
+    = f.label :remember_me, class: "checkbox" do
+      = f.check_box :remember
+      span Remember me on this computer
+  .form__actions
+    = f.submit "Log in", class: "button button--primary"
+
+p.centered
+  = link_to "Sign up", signup_path
+  span.separator |
+  = link_to "Forgot password?", new_password_reset_path

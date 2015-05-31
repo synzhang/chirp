@@ -1,0 +1,17 @@
+- provide :title, 'Reset password'
+- page_css 'simple_form'
+
+header.page-header
+  h3.xlarge.text-divider Reset password
+  
+= form_for @user, url: password_reset_path(params[:id]) do |f|
+  = render 'shared/error_messages', object: f.object
+  = hidden_field_tag :email, @user.email
+  .form__group
+    = f.label :password
+    = f.password_field :password, class: 'form__control'
+  .form__group
+    = f.label :password_confirmation, 'Confirmation'
+    = f.password_field :password_confirmation, class: 'form__control'
+  .form__actions
+    = f.submit 'Update password', class: 'button'

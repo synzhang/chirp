@@ -5,11 +5,11 @@ html class="#{page_class}"
     = csrf_meta_tags
     = render 'layouts/browsehappy'
     = stylesheet_link_tag 'application', media: 'all'
+    = yield :stylesheet
   body
     = render 'layouts/header'
     .wrapper
-      - flash.each do |message_type, message|
-        = content_tag :div, message, class: "alert alert-#{message_type}"
+      = render 'shared/flashes'
       = yield
-    = render 'layouts/footer'
     = javascript_include_tag 'application'
+    = yield :javascript
