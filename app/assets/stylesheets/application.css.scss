@@ -47,8 +47,6 @@
 // Themed styles
 @import '_themed';
 
-// Pages
-@import '_pages/*';
-
 // Make sure this is last to override anything else :)
 @import '_helper';
+

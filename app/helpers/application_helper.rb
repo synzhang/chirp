@@ -19,4 +19,8 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+
+  def page_css(file)
+    content_for(:stylesheet, stylesheet_link_tag("_pages/#{file}"))
+  end
 end
