@@ -226,6 +226,7 @@ ol.list-links {
 }
 
 /*==========  RELATED GUIDES LIST  ==========*/
+
 .related-guides-list {
   font-family: $fontHighlight;
   padding-top: 0;
@@ -294,8 +295,24 @@ ol.list-links {
   }
 }
 
+/*==========  LIST RESET  ==========*/
+
+.list--normalized {
+  @include list--reset;
+  margin-bottom: 1em;
+  padding: 0 0 0 30px;
+}
+
+ul.list--normalized {
+  list-style-type: disc;
+}
+
+ol.list--normalized {
+  list-style-type: decimal;
+}
 
 /*==========  LESSONS  ==========*/
+
 .list-lessons {
   padding-left: 0;
 
@@ -326,6 +343,7 @@ ol.list-links {
 
 
 /*==========  GUIDES INTO - used on homepage  ==========*/
+
 .list-guides-intro {
   margin-bottom: $lineHeight*2;
 

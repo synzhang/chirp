@@ -1,0 +1,59 @@
+.profile--small {
+  margin-bottom: $gapBase;
+}
+
+.profile__user {
+  @include clearfix;
+  margin-bottom: $gapBase;
+}
+
+.profile__avatar {
+  float: left;
+  height: 80px;
+  margin-right: $gapSmall;
+  width: 80px;
+}
+
+.profile__name {
+  overflow: hidden;
+
+  > strong {
+    color: $colorBlack;
+    display: block;
+    font-size: $fontMedium;
+  }
+
+  > em {
+    color: $colorGray;
+    display: block;
+    font-size: $fontSmall;
+    font-style: normal;
+    
+    &::before {
+      content: '@';
+    }
+  }
+}
+
+.profile__stats {
+  @include clearfix;
+
+  .stat {
+    @include gallery(4);
+    text-decoration: none;
+
+    > span {
+      color: $colorGray;
+      display: block;
+    }
+
+    > strong {
+      color: $colorBlack;
+      display: block;
+    }
+  }
+}
+
+.profile__actions {
+  margin-top: $gapBase;
+}

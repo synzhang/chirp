@@ -1,0 +1,75 @@
+.micropost {
+  @include clearfix;
+  padding: $gapBase;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.micropost__avatar {
+  float: left;
+  height: 50px;
+  margin-right: $gapBase;
+  overflow: hidden;
+  width: 50px;
+}
+
+.micropost__body {
+  overflow: hidden;
+
+  > .content {
+    padding: $gapSmall 0;
+  }
+}
+
+.micropost__username {
+  display: inline-block;
+  margin-right: 10px;
+
+  &,
+  &:visited {
+    color: $colorGrayDark;
+  }
+
+  &:hover {
+    color: $colorBlack;
+  }
+}
+
+.micropost__timestamp {
+  color: $colorGrayLight;
+  cursor: default;
+}
+
+.micropost__action {
+  color: $colorGrayLight;
+
+  &:hover {
+    color: $colorGray;
+  }
+}
+
+.microposts {
+  padding: 0;
+
+  > li {
+    border-top: 1px solid $colorGrayLighter;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.micropost-form {
+  .form__actions {
+    .button--primary {
+      @include button--block;
+    }
+  }
+}

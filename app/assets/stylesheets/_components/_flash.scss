@@ -1,0 +1,80 @@
+.flash {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  color: #246;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 15px;
+  position: relative;
+
+  &.flash--success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  &.flash--info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+  }
+
+  &.flash--warning {
+    color: #4c4a42;
+    background-color: #fff9ea;
+    border-color: #dfd8c2;
+  }
+
+  &.flash--danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+
+  // Make links stand out
+  a {
+    font-weight: bold;
+  }
+
+  p:first-child {
+    padding-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  .flash__close {
+    float: right;
+    padding: 17px;     // bigger hit area
+    margin-top: -15px; // negative margins to account for bigger padding
+    margin-right: -15px;
+    margin-left: 20px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Flashes can have an action button instead of the cross.
+  .flash__action {
+    float: right;
+    margin-top: -4px;
+    margin-left: 20px;
+  }
+
+  & + .flash { margin-top: 5px; }
+}
+
+.flashes {
+  margin: {
+    bottom: 15px;
+    top: 15px;
+  }
+}
+
