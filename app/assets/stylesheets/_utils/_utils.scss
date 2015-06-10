@@ -81,6 +81,12 @@
   $gapMedium: 2rem;
   $gapLarge: 4rem;
 
+  // Defining border
+  $borderSolid: 1px solid $colorGrayLighter;
+
+  // Defining border radius
+  $borderRadiusBase: 4px;
+
   // Defining animation easings
   $animationEasing: cubic-bezier(0.455, 0.030, 0.515, 0.955) !default;
 
@@ -413,6 +419,23 @@
     }
   }
 
+  @mixin imgtxt ($float, $gap, $text) {
+    @include clearfix;
+
+    > img {
+      float: $float;
+      @if $float == left {
+        margin-right: $gap;
+      } @else if $float == right {
+        margin-left: $gap;
+      }
+    }
+
+    #{$text} {
+      overflow: hidden;
+    }
+  }
+  
 $susy: (
   columns: 12,
   container: 1120px,

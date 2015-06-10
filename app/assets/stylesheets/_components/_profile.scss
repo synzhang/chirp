@@ -1,5 +1,10 @@
 .profile--small {
   margin-bottom: $gapBase;
+
+  .profile__avatar {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 .profile__user {
@@ -9,9 +14,7 @@
 
 .profile__avatar {
   float: left;
-  height: 80px;
   margin-right: $gapSmall;
-  width: 80px;
 }
 
 .profile__name {
@@ -56,4 +59,22 @@
 
 .profile__actions {
   margin-top: $gapBase;
+}
+
+.profile--tiny {
+  .profile__user {
+    margin-bottom: 0;
+  }
+
+  .profile__avatar {
+    height: 60px;
+    width: 60px;
+  }
+
+  .profile__name {
+    > strong,
+    > em {
+      line-height: 30px;
+    }
+  }
 }

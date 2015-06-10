@@ -13,6 +13,10 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def show
+    @micropost = Micropost.find(params[:id])
+  end
+
   def destroy
     @micropost.destroy
     flash[:success] = "Micropost deleted"
@@ -22,7 +26,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture)
+      params.require(:micropost).permit(:content, :picture, :user_id, :id)
     end
 
     def correct_user

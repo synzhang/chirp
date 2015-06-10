@@ -4,12 +4,12 @@ li.micropost id="micropost-#{micropost.id}"
     header
       = link_to micropost.user.name, micropost.user, class: "micropost__username"
       time.micropost__timestamp
-        = time_ago_in_words(micropost.created_at)
+        = link_to time_ago_in_words(micropost.created_at), [micropost.user, micropost]
     .content
       = micropost.content
       = image_tag micropost.picture.url if micropost.picture?
     footer
       - if current_user?(micropost.user)
-        = link_to micropost, method: :delete, class: "micropost__action", title: "Delete",
+        = link_to [micropost.user, micropost], method: :delete, class: "micropost__action", title: "Delete",
                                data: { confirm: "You sure?" }
           span.icon.icon-trash-o

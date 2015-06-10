@@ -40,6 +40,14 @@
 .micropost__timestamp {
   color: $colorGrayLight;
   cursor: default;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $colorGrayDark;
+    }
+  }
 }
 
 .micropost__action {
@@ -54,7 +62,7 @@
   padding: 0;
 
   > li {
-    border-top: 1px solid $colorGrayLighter;
+    border-top: $borderSolid;
 
     &:first-child {
       border-top: none;

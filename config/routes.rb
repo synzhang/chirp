@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
   resources :users do
+    resources :microposts, only: [:create, :show, :destroy]
     member do
       get :following, :followers
     end
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
   get 'styleguide'            => 'styleguide#home'
   get 'styleguide/coding'     => 'styleguide#coding'

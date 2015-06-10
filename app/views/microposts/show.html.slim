@@ -1,0 +1,21 @@
+- page_css 'micropost'
+- author = @micropost.user
+
+article id="micropost-#{@micropost.id}"
+  header
+    .profile--tiny
+      .profile__user
+        = link_to author, class: 'profile__avatar' do
+          = gravatar_for(author, size: 60)
+        .profile__name
+          strong = author.name
+          em = author.name
+  .body
+    p = @micropost.content
+  footer
+    ul.footer__actions
+      - if current_user?(author)
+        li = link_to [author, @micropost], method: :delete, class: "micropost__action", title: "Delete",
+                               data: { confirm: "You sure?" }
+          span.icon.icon-trash-o
+    time = @micropost.created_at.strftime("%Y-%m-%d %H:%M:%S")

@@ -1,0 +1,48 @@
+@import '_utils/_utils';
+
+html.microposts_show {
+  .wrapper {
+    @include container;
+
+    > article {
+      @include span(8);
+      @include push(2);
+      background-color: #fff;
+      border: $borderSolid;
+      border-radius: $borderRadiusBase;
+      padding: $gapMedium;
+
+      > header {
+      }
+
+      > .body {
+      }
+
+      > footer {
+        time {
+          color: $colorGray;
+        }
+      }
+    }
+  }
+
+  .footer__actions {
+    margin-bottom: $gapBase;
+    padding: {
+      left: 0;
+    }
+
+    > li {
+      display: inline-block;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      a {
+        color: $colorGray;
+        text-decoration: none;
+      }
+    }
+  }
+}
