@@ -5,10 +5,11 @@ header.header
       ul.list--inline
         li = link_to "Home", root_path
         li = link_to "Trends", "#"
+        - if logged_in?
+          li = link_to "Users", users_path
   .u-pull-right
     .user-nav
       - if logged_in?
-        = link_to "Users", users_path
         .dropdown
           a.dropdown__toggle href="#" data-toggle="dropdown"
             | Account
