@@ -79,7 +79,8 @@
   $gapSmall: .5rem;
   $gapBase: 1rem;
   $gapMedium: 2rem;
-  $gapLarge: 4rem;
+  $gapLarge: 3rem;
+  $gapHuge: 4rem;
 
   // Defining border
   $borderSolid: 1px solid $colorGrayLighter;
@@ -417,6 +418,12 @@
     &::after {
       clear: both;
     }
+  }
+
+  @mixin text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   @mixin imgtxt ($float, $gap, $text) {
