@@ -40,6 +40,7 @@
 
 .profile__stats {
   @include clearfix;
+  margin-bottom: $gapBase;
 
   .stat {
     @include gallery(4);
@@ -87,6 +88,10 @@
 
 .profile__actions {
   margin-top: $gapBase;
+
+  &:empty {
+    display: none;
+  }
 }
 
 .profile--tiny {
