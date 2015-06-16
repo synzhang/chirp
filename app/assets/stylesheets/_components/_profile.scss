@@ -57,6 +57,34 @@
   }
 }
 
+.profile__details {
+  list-style: none;
+  margin-bottom: $gapBase;
+  padding: {
+    left: 0;
+    top: 0;
+  }
+
+  > li {
+    @include text-overflow;
+    color: $colorGray;
+    padding-left: 0;
+
+    .icon {
+      margin-right: $gapSmall;
+      vertical-align: middle;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .profile__actions {
   margin-top: $gapBase;
 }

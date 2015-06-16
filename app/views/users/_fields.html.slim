@@ -6,9 +6,16 @@
 .form__group
   = f.label :email
   = f.text_field :email, class: "form__control"
+.form__checkbox
+  = f.label :open_my_email, class: 'checkbox' do
+    = f.check_box :open_my_email
+    span Public my email
 .form__group
   = f.label :password
   = f.password_field :password, class: "form__control"
 .form__group
   = f.label :password_confirmation, "Confirmation"
   = f.password_field :password_confirmation, class: "form__control"
+.form__group
+  = f.label :link
+  = f.text_field :link, class: "form__control", type: "url"

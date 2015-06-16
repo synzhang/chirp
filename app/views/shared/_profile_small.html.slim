@@ -16,5 +16,17 @@ section.profile--small
     = link_to followers_user_path(@user), class: "stat"
       span Followers
       strong = @user.followers.count
+  ul.profile__details
+    - if @user.open_my_email
+      li
+        span.icon.icon-envelope
+        = link_to @user.email, "mailto:#{@user.email}", target: '_blank', rel: 'nofollow'
+    - if @user.link
+      li
+        span.icon.icon-link
+        = link_to @user.link, @user.link, target: '_blank', rel: 'nofollow'
+    li
+      span.icon.icon-clock-o
+      = @user.created_at.strftime("Joined on %F")
   - if logged_in?
     .profile__actions = render 'users/follow_form'

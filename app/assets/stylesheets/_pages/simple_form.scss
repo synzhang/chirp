@@ -28,9 +28,12 @@ html.password_resets_create {
     @include push(3);
   }
 
-  .form__group {
+  .form__group,
+  .form__checkbox {
     margin-bottom: gutter();
+  }
 
+  .form__group {
     > label {
       @include span(1 of 6);
       line-height: 34px;
