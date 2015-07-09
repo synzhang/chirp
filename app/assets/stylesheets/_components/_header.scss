@@ -32,32 +32,6 @@ body {
     padding: 0 $gapBase;
   }
 
-  .nav {
-    float: left;
-    padding: 0 1rem;
-
-    .list--inline {
-      font-size: 16px;
-
-      > li {
-        > a {
-          display: block;
-          line-height: $headerHeight;
-          padding: {
-            left: $gapBase;
-            right: $gapBase;
-          }
-          text-align: center;
-
-          &:hover {
-            background-color: $colorBlueGrey800;
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
-
   .search-box {
   }
 
@@ -95,3 +69,50 @@ body {
     }
   }
 }
+
+.header__nav {
+  float: left;
+  padding: 0 1rem;
+
+  .list--inline {
+    font-size: 16px;
+
+    > li {
+      > a {
+        display: block;
+        line-height: $headerHeight;
+        padding: {
+          left: $gapBase;
+          right: $gapBase;
+        }
+        text-align: center;
+
+        &:hover {
+          background-color: $colorBlueGrey800;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.header__actions {
+  float: right;
+
+  > .button {
+    background: transparent;
+    border: none;
+    color: $colorBlueGrey100;
+    float: left;
+    font-weight: normal;
+    height: $headerHeight;
+    line-height: $headerHeight;
+    padding: 0 $gapBase;
+
+    &:hover {
+      background-color: $colorBlueGrey800;
+      color: #fff;
+    }
+  }
+}
+
