@@ -62,14 +62,14 @@
 @mixin rule--small {
   font-size: $fontSmall;
   line-height: 2.0000em; /* 26px */
-  padding-top: 2.0000em;
+  margin-bottom: 2.0000em;
   padding-bottom: 0;
 }
 
 @mixin rule--base {
   font-size: $fontBase;
   line-height: 1.6250em; /* 26px */
-  padding-top: 1.6250em;
+  margin-bottom: 1.6250em;
   padding-bottom: 0;
 }
 
@@ -77,7 +77,7 @@
   font-size: $fontMedium;
   font-weight: 300;
   line-height: 1.3000em; /* 26px */
-  padding-top: 1.3000em;
+  margin-bottom: 1.3000em;
   padding-bottom: 0;
 }
 
@@ -86,7 +86,7 @@
   font-size: $fontLarge;
   font-weight: 300;
   line-height: 1.0000em; /* 26px */
-  padding-top: 1.0000em;
+  margin-bottom: 1.0000em;
   padding-bottom: 0;
 }
 
@@ -95,7 +95,7 @@
   font-size: $fontXLarge;
   font-weight: 300;
   line-height: 1.2381em; /* 52px */
-  padding-top: 0.6190em;
+  margin-bottom: 0.6190em;
   padding-bottom: 0;
 }
 
@@ -104,7 +104,7 @@
   font-size: $fontXXLarge;
   font-weight: 300;
   line-height: 1.1471em; /* 78px */
-  padding-top: 0.3824em;
+  margin-bottom: 0.3824em;
   padding-bottom: 0;
 }
 
@@ -113,7 +113,7 @@
   font-size: $fontHuge;
   font-weight: 300;
   line-height: 1.19em; /* 130px */
-  padding-top: 0.2364em;
+  margin-bottom: 0.2364em;
   padding-bottom: 0;
 }
 
