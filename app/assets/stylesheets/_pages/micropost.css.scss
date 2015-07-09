@@ -13,6 +13,7 @@ html.microposts_show {
       padding: $gapMedium;
 
       > header {
+        margin-bottom: $gapBase;
       }
 
       > .body {
@@ -26,23 +27,7 @@ html.microposts_show {
     }
   }
 
-  .footer__actions {
+  .micropost__actions {
     margin-bottom: $gapBase;
-    padding: {
-      left: 0;
-    }
-
-    > li {
-      display: inline-block;
-
-      &:first-child {
-        padding-left: 0;
-      }
-
-      a {
-        color: $colorGray;
-        text-decoration: none;
-      }
-    }
   }
 }

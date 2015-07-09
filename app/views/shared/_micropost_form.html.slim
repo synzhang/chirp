@@ -1,16 +1,19 @@
-= form_for [@micropost.user, @micropost], html: { class: "micropost-form", multipart: true } do |f|
-  = render 'shared/error_messages', object: f.object
-  .form__group
-    = f.text_area :content, class: "form__control", rows: 4, placeholder: "Compose new micropost..."
-  .form__group
-    = f.file_field :picture, accept: 'image/jpeg, image/gif, image/png', class: "form__control"
-  .form__actions
-    = f.submit "Post", class: "button button--primary"
+- micropost = current_user.microposts.build
 
-javascript:
-  $('#micropost_picture').bind('change', function() {
-    size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
+= form_for [micropost.user, micropost], remote: true, html: {class: 'modal fade', id: 'micropost-modal', multipart: true, tabindex: '-1', role: 'dialog', 'aria-labelledby' => '', 'aria-hidden' => true, data: {type: 'json'}} do |f|
+  .modal-dialog
+    .modal-content
+      header.modal-header
+        button.close type="button" data-dismiss="modal"
+          span aria-hidden="true" &times;
+        h4.modal-title Compose
+      .modal-body
+        = render 'shared/error_messages', object: f.object
+        .form__group
+          = f.text_area :content, class: "form__control", rows: 4, placeholder: "Compose new micropost..."
+        .form__group
+          = f.file_field :picture, accept: 'image/jpeg, image/gif, image/png', class: "form__control"
+      footer.modal-footer
+        .form__actions
+          = f.submit "Post", class: "button button--primary"
+

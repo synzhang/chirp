@@ -12,5 +12,9 @@ html class="#{page_class}"
     .wrapper
       = yield
     = render 'shared/flashes'
+    .modals
+      - if logged_in?
+        = render 'shared/micropost_form'
+      = yield :modals
     = javascript_include_tag 'application'
     = page_js

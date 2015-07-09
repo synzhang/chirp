@@ -13,8 +13,13 @@ article id="micropost-#{@micropost.id}"
   .body
     p = @micropost.content
   footer
-    ul.footer__actions
-      - if current_user?(author)
+    ul.micropost__actions
+      li = link_to '#', class: 'micropost__action', title: 'Reply'
+        span.icon.icon-reply
+      - unless current_user?(author)
+        li = link_to '#', class: 'micropost__action', data: {toggle: 'modal', target: '#repost-modal'}, title: 'Repost'
+          span.icon.icon-retweet
+      - else
         li = link_to [author, @micropost], method: :delete, class: "micropost__action", title: "Delete",
                                data: { confirm: "You sure?" }
           span.icon.icon-trash-o
