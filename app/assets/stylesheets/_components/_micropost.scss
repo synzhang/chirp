@@ -7,6 +7,24 @@
   }
 }
 
+.micropost__context {
+  color: $colorGrayLight;
+  font-size: 13px;
+  margin-bottom: 5px;
+
+  .icon {
+    margin-right: .5em;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $colorGrayDark;
+    }
+  }
+}
+
 .micropost__avatar {
   float: left;
   height: 50px;

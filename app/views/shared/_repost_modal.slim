@@ -1,0 +1,16 @@
+form.modal.fade.micropost-form#repost-modal enctype="multipart/form-data" accept-charset="UTF-8" method="post" data-remote="true" data-type="json" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      header.modal-header
+        button.close type="button" data-dismiss="modal"
+          span aria-hidden="true" &times;
+        h4.modal-title Repost
+      .modal-body
+        /* .repost__content */
+        /*   .form__group */
+        /*     = text_area_tag 'micropost[content]', '', class: 'form__control', rows: 4, placeholder: 'Compose new micropost...' */
+        .repost__origin
+      footer.modal-footer
+        .form__actions
+          = submit_tag 'Repost', class: 'button button--primary is-disabled', disabled: true
+

@@ -10,11 +10,18 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
   resources :users do
-    resources :microposts, only: [:create, :show, :destroy]
+    resources :microposts, only: [:create, :show, :destroy] do
+      member do
+        post 'reply'
+        post 'repost'
+      end
+    end
+
     member do
       get :following, :followers
     end
   end
+  get 'microposts' => 'microposts#show'
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :relationships,       only: [:create, :destroy]

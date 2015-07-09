@@ -36,6 +36,16 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def repost
+    respond_to do |format|
+      if @micropost.repost(current_user)
+        format.json { render json: @micropost, status: :created }
+      else
+        format.json { render json: @micropost.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
     def micropost_params

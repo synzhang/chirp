@@ -1,0 +1,9 @@
+img.micropost__avatar height="50" width="50"
+section.micropost__content
+  header.micropost__header
+    span.micropost__username
+      | {{author}}
+    time.micropost__timestamp
+      | {{timestamp}}
+  .micropost__body
+    | {{content}}

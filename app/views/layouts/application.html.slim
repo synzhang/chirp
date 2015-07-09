@@ -15,6 +15,7 @@ html class="#{page_class}"
     .modals
       - if logged_in?
         = render 'shared/micropost_form'
+        = render 'shared/repost_modal'
       = yield :modals
     = javascript_include_tag 'application'
     = page_js
