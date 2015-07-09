@@ -94,4 +94,31 @@ $sidebarWidth: 280px !default;
 // Defining zindex
 $zindexHeader: 1000;
 $zindexDropdown: 1000;
+$zindexModalBackdrop: 2000;
+$zindexModal: $zindexModalBackdrop + 1;
 
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* Modal
+   -------------------------------------------------------------------------- */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$border-radius-large: 6px;
+$zindex-modal-background: $zindexModalBackdrop;
+$zindex-modal: $zindexModal;
+$modal-inner-padding: 15px !default;
+$modal-title-padding: 15px !default;
+$modal-title-line-height: 1.428571429 !default;
+$modal-content-bg: #fff !default;
+$modal-content-border-color: rgba(0,0,0,.2) !default;
+$modal-content-fallback-border-color: #999 !default;
+$modal-backdrop-bg: #000 !default;
+$modal-backdrop-opacity: .5 !default;
+$modal-header-border-color: #e5e5e5 !default;
+$modal-footer-border-color: $modal-header-border-color !default;
+$modal-lg: 900px !default;
+$modal-md: 600px !default;
+$modal-sm: 300px !default;
