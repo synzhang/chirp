@@ -23,4 +23,10 @@ module ApplicationHelper
   def page_css(file)
     content_for(:stylesheet, stylesheet_link_tag("_pages/#{file}"))
   end
+
+  def page_js
+    main = "#{controller_path.gsub('/', '_').gsub('_', '').capitalize}#{action_name.capitalize}"
+    javascript_tag "if (typeof App.Pages.#{main} != 'undefined') App.Pages.#{main}();", type: 'text/javascript'
+  end
+
 end
