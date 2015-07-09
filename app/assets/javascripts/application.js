@@ -17,5 +17,11 @@
 //= require handlebars.runtime
 //= require transition
 //= require dropdown
-//= require_tree .
 //= require modal
+//= require base
+//= require_tree ./templates
+//= require_tree ./components
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./pages
