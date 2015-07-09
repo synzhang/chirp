@@ -1,4 +1,4 @@
-- unless flash.empty?
-  .flashes
+ol.flashes
+  - unless flash.empty?
     - flash.each do |message_type, message|
-      = content_tag :p, message, class: "flash flash--#{message_type}"
+      = content_tag :li, message, class: "flash flash--#{message_type}"

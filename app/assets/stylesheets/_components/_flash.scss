@@ -8,6 +8,10 @@
   padding: 15px;
   position: relative;
 
+  &::before {
+    display: none;
+  }
+
   &.flash--success {
     color: #3c763d;
     background-color: #dff0d8;
@@ -72,9 +76,17 @@
 }
 
 .flashes {
-  margin: {
-    bottom: 15px;
-    top: 15px;
+  left: 0;
+  margin: auto;
+  max-width: 60%;
+  min-width: 300px;
+  padding-left: 0;
+  position: fixed;
+  right: 0;
+  top: 60px;
+
+  &:empty {
+    display: none;
   }
 }
 

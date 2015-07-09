@@ -10,7 +10,7 @@ html class="#{page_class}"
   body
     = render 'layouts/header'
     .wrapper
-      = render 'shared/flashes'
       = yield
+    = render 'shared/flashes'
     = javascript_include_tag 'application'
     = yield :javascript
