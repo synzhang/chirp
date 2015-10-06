@@ -1,0 +1,14 @@
+{
+  "name": "chirp",
+  "authors": [
+    "Syn Zhang <zeyanzhang.china@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
