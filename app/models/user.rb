@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   before_save :downcase_email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name, presence: true, length: { maximum: 50 }
+  validates :username, presence: true, length: { maximum: 50 },
+                       uniqueness: { case_sensitive: false }
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
@@ -68,10 +70,14 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
-  def feed
+  def feed(later_than: nil)
     following_ids = "SELECT followed_id FROM relationships
                      WHERE follower_id = :user_id"
-    Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
+    if later_than.nil?
+      Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
+    else
+      Micropost.where("(user_id IN (#{following_ids}) OR user_id = :user_id) AND created_at > :later_than", user_id: id, later_than: DateTime.parse(later_than))
+    end
   end
 
   def follow(other_user)

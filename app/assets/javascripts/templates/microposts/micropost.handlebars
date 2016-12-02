@@ -1,0 +1,41 @@
+{{#if isRepost}}
+  <div class="micropost__context">
+    <span class="icon icon-retweet"></span>
+    <a href="{{repostUserUrl}}">{{repostUsername}} reposted</a>
+  </div>
+{{/if}}
+<a class="micropost__avatar" href="{{userUrl}}">
+  <img class="micropost__avatar" src="{{avatar}}" height="50" width="50" alt="{{nickname}}">
+</a>
+<section class="micropost__content">
+  <header class="micropost__header">
+    <a class="micropost__user" href="{{userUrl}}">
+      <span class="micropost__nickname">{{nickname}}</span>
+      <small class="micropost__username">@{{username}}</small>
+    </a>
+    <time class="micropost__timestamp">
+      <a href="{{url}}">{{timestamp}}</a>
+    </time>
+  <div class="micropost__body">{{content}}</div>
+  <footer class="micropost__footer">
+    <ul class="micropost__actions">
+      <li>
+        <a class="micropost__action js-reply" href="#" title="Reply">
+          <span class="icon icon-reply"></span>
+        </a>
+      </li>
+      <li>
+        <a class="micropost__action {{#if isRepost}}is-reposted {{/if}}js-repost" href="#" title="{{#if isRepost}}Cancel Repost{{else}}Repost{{/if}}">
+          <span class="icon icon-retweet"></span>
+        </a>
+      </li>
+      {{#if canDelete}}
+      <li>
+        <a class="micropost__action js-delete" href="#" title="Delete">
+          <span class="icon icon-trash-o"></span>
+        </a>
+      </li>
+      {{/if}}
+    </ul>
+  </footer>
+</section>

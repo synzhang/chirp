@@ -1,0 +1,56 @@
+.conversation {
+  .micropost--statements,
+  .micropost--replies,
+  .reply-form {
+    display: none;
+  }
+
+  .reply-form {
+    overflow: hidden;
+    padding: 0 $gapBase $gapBase;
+
+    &.is-folded {
+
+      .reply-form__content {
+        height: 42px;
+      }
+
+      > footer {
+        display: none;
+      }
+    }
+  }
+
+  &.is-expanded {
+    .micropost--statements,
+    .micropost--replies,
+    .reply-form {
+      display: block;
+    }
+  }
+}
+
+.conversations {
+  .new-arrival-bar {
+    background-color: $colorBlueGrey50;
+    border-bottom: $borderSolid;
+    cursor: pointer;
+    display: none;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 0;
+    text-align: center;
+
+    &.is-shown {
+      display: block;
+    }
+  }
+
+  .new-arrival-count {
+    margin: 0 .5em;
+  }
+
+  .conversation {
+    border-bottom: $borderSolid;
+  }
+}

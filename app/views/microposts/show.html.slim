@@ -1,26 +1,9 @@
+- provide :title, "#{@micropost.user.name}: \"#{@micropost.content}\""
 - page_css 'micropost'
-- author = @micropost.user
+- provide :manual_exec_entry_js, true
 
-article id="micropost-#{@micropost.id}"
-  header
-    .profile--tiny
-      .profile__user
-        = link_to author, class: 'profile__avatar' do
-          = gravatar_for(author, size: 60)
-        .profile__name
-          strong = author.name
-          em = author.name
-  .body
-    p = @micropost.content
-  footer
-    ul.micropost__actions
-      li = link_to '#', class: 'micropost__action', title: 'Reply'
-        span.icon.icon-reply
-      - unless current_user?(author)
-        li = link_to '#', class: 'micropost__action', data: {toggle: 'modal', target: '#repost-modal'}, title: 'Repost'
-          span.icon.icon-retweet
-      - else
-        li = link_to [author, @micropost], method: :delete, class: "micropost__action", title: "Delete",
-                               data: { confirm: "You sure?" }
-          span.icon.icon-trash-o
-    time = @micropost.created_at.strftime("%Y-%m-%d %H:%M:%S")
+- content_for :javascript do
+  javascript:
+    App.Pages.MicropostsShow({
+      conversation: #{raw(render(partial: 'microposts/conversation.json', locals: {micropost: @micropost, lazyload: false}))},
+    });

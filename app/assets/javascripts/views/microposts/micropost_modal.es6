@@ -1,5 +1,4 @@
 App.Views.MicropostModal = Backbone.View.extend({
-
   el: '#micropost-modal',
 
   events: {
@@ -34,6 +33,7 @@ App.Views.MicropostModal = Backbone.View.extend({
   },
 
   successHandler(event, data, status, xhr) {
+    $document.trigger('pull.timeline')
     this.$el.modal('hide');
     $('.flashes').append('<li class="flash flash--success">Micropost posted!</li>')
   },
@@ -43,5 +43,4 @@ App.Views.MicropostModal = Backbone.View.extend({
 
   completeHandler(event, xhr, status) {
   }
-
 });

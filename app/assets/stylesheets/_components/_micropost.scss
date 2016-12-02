@@ -41,7 +41,15 @@
   padding: $gapSmall 0;
 }
 
-.micropost__username {
+.micropost__user,
+.micropost__timestamp {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
+}
+
+.micropost__user {
   display: inline-block;
   margin-right: 10px;
 
@@ -53,6 +61,11 @@
   &:hover {
     color: $colorBlack;
   }
+}
+
+.micropost__username {
+  color: $colorGrayLight;
+  margin-left: $gapSmall;
 }
 
 .micropost__timestamp {
@@ -96,6 +109,14 @@
   &:hover {
     color: $colorGray;
   }
+
+  &.is-reposted {
+    color: $colorGreen700;
+  }
+}
+
+.micropost__action__count {
+  margin-left: .5em;
 }
 
 .microposts {
@@ -103,11 +124,24 @@
 
   > li {
     border-top: $borderSolid;
+    padding-left: 0;
 
     &:first-child {
       border-top: none;
     }
 
+    &::before {
+      display: none;
+    }
+  }
+
+}
+
+.micropost--statements {
+  background-color: $colorBlueGrey50;
+  padding-left: 0;
+
+  > li {
     &::before {
       display: none;
     }

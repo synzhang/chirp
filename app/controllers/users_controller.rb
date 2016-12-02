@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @latest_pull_time = DateTime.now
   end
 
   def new
@@ -65,7 +66,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :username, :email, :password,
                                     :password_confirmation, :open_my_email, :link)
     end
 

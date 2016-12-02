@@ -1,8 +1,19 @@
 - provide :title, 'Home'
 - page_css 'static_pages_home'
+- provide :manual_exec_entry_js, true
 
 aside
   = render 'shared/profile_small'
 main
   h1 Feeds
-  = render 'shared/feed'
+  #conversations.conversations
+    output.new-arrival-bar
+      | See
+      span.new-arrival-count
+      | new microposts.
+
+- content_for :javascript do
+  javascript:
+    App.Pages.StaticPagesHome({
+      data: #{raw(render(template: 'microposts/conversations.json', locals: {conversations: @feed_items, latest_pull_time: @latest_pull_time}))}
+    })

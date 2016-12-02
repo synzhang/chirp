@@ -16,7 +16,7 @@ module ApplicationHelper
     if page_title.empty?
       base_title
     else
-      "#{page_title} | #{base_title}"
+      raw "#{page_title} | #{base_title}"
     end
   end
 
@@ -25,8 +25,11 @@ module ApplicationHelper
   end
 
   def page_js
-    main = "#{controller_path.gsub('/', '_').gsub('_', '').capitalize}#{action_name.capitalize}"
-    javascript_tag "if (typeof App.Pages.#{main} != 'undefined') App.Pages.#{main}();", type: 'text/javascript'
+    return if content_for(:manual_exec_entry_js)
+
+    entry = "#{controller_path.gsub('/', '_').camelize}#{action_name.camelize}"
+    content_for(:javascript,
+      javascript_tag("if (typeof App.Pages.#{entry} != 'undefined') App.Pages.#{entry}();", type: 'text/javascript'))
   end
 
 end

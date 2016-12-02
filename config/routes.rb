@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root             'static_pages#home'
+  get 'timeline'=> 'microposts#timeline', type: :feed
+  get 'poll'    => 'static_pages#poll'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
@@ -12,14 +14,19 @@ Rails.application.routes.draw do
   resources :users do
     resources :microposts, only: [:create, :show, :destroy] do
       member do
-        post 'reply'
+        get 'statements' => 'microposts#statements'
+        post 'replies' => 'microposts#reply'
+        get 'replies' => 'microposts#replies'
         post 'repost'
+        get 'reposts'
       end
     end
 
     member do
       get :following, :followers
     end
+
+    get 'timeline' => 'microposts#timeline', type: :user
   end
   get 'microposts' => 'microposts#show'
   resources :account_activations, only: [:edit]

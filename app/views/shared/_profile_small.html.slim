@@ -5,7 +5,7 @@ section.profile--small
     = link_to gravatar_for(@user, size: 80), @user, class: "profile__avatar"
     .profile__name
       strong = @user.name
-      em = @user.name
+      em = @user.username
   .profile__stats
     = link_to @user, class: "stat"
       span Microposts

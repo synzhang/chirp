@@ -4,30 +4,12 @@ html.microposts_show {
   .wrapper {
     @include container;
 
-    > article {
+    .conversation {
       @include span(8);
       @include push(2);
       background-color: #fff;
       border: $borderSolid;
       border-radius: $borderRadiusBase;
-      padding: $gapMedium;
-
-      > header {
-        margin-bottom: $gapBase;
-      }
-
-      > .body {
-      }
-
-      > footer {
-        time {
-          color: $colorGray;
-        }
-      }
     }
-  }
-
-  .micropost__actions {
-    margin-bottom: $gapBase;
   }
 }

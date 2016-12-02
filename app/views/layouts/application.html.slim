@@ -14,8 +14,10 @@ html class="#{page_class}"
     = render 'shared/flashes'
     .modals
       - if logged_in?
-        = render 'shared/micropost_form'
+        = render 'shared/micropost_modal'
         = render 'shared/repost_modal'
+        = render 'shared/reply_modal'
       = yield :modals
     = javascript_include_tag 'application'
     = page_js
+    = yield :javascript

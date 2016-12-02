@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707160603) do
+ActiveRecord::Schema.define(version: 20150823071701) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 20150707160603) do
     t.datetime "updated_at", null: false
     t.string   "picture"
     t.integer  "origin_id"
+    t.integer  "statement_id"
   end
 
   add_index "microposts", ["origin_id"], name: "index_microposts_on_origin_id"
+  add_index "microposts", ["statement_id"], name: "index_microposts_on_statement_id"
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150707160603) do
     t.datetime "reset_sent_at"
     t.boolean  "open_my_email"
     t.string   "link"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

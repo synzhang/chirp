@@ -1,11 +1,20 @@
 - provide :title, @user.name
 - page_css 'user'
+- provide :manual_exec_entry_js, true
 
 aside
   = render 'shared/profile_small'
 main
   h1 Feeds
-  - if @user.microposts.any?
-    ol.microposts
-      = render @microposts
-    = will_paginate @microposts
+  #conversations.conversations
+    output.new-arrival-bar
+      | See
+      span.new-arrival-count
+      | new microposts.
+
+- content_for :javascript do
+  javascript:
+    App.Pages.UsersShow({
+      userId: #{@user.id},
+      data: #{raw(render(template: 'microposts/conversations.json', locals: {conversations: @microposts, latest_pull_time: @latest_pull_time}))}
+    })

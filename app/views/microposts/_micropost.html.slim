@@ -3,7 +3,7 @@
 - id = is_repost ? origin.id : micropost.id
 - user_id = is_repost ? origin.user.id : micropost.user.id
 
-li.micropost id="micropost-#{id}" data-user=user_id
+.micropost id="micropost-#{id}" data-micropost=id data-user=user_id
   - if is_repost
     .micropost__context
       span.icon.icon-retweet
@@ -13,7 +13,9 @@ li.micropost id="micropost-#{id}" data-user=user_id
   = link_to gravatar_for(micropost.user, size: 50), micropost.user, class: 'micropost__avatar'
   section.micropost__content
     header.micropost__header
-      = link_to micropost.user.name, micropost.user, class: "micropost__username"
+      = link_to micropost.user, class: "micropost__user"
+        span.micropost__nickname = micropost.user.name
+        small.micropost__username = "@#{micropost.user.username}"
       time.micropost__timestamp
         = link_to time_ago_in_words(micropost.created_at), [micropost.user, micropost]
     .micropost__body
@@ -26,6 +28,8 @@ li.micropost id="micropost-#{id}" data-user=user_id
         - unless current_user?(micropost.user)
           li = link_to '#', class: 'micropost__action js-repost', title: 'Repost'
             span.icon.icon-retweet
+            - if micropost.reposts.size > 0
+              span.micropost__action__count = micropost.reposts.size
         - else
           li = link_to [micropost.user, micropost], method: :delete, class: "micropost__action", title: "Delete",
                                  data: { confirm: "You sure?" }
