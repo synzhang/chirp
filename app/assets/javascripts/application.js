@@ -19,6 +19,7 @@
 //= require dropdown
 //= require modal
 //= require base
+//= require common
 //= require_tree ./templates
 //= require_tree ./components
 //= require_tree ./models

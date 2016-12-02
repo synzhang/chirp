@@ -1,10 +1,17 @@
-(function(root) {
-   root.App = {
+;((root) => {
+  root.App = {
+    Utils: {},
+    Common: {},
+    Components: {},
+    Mixins: {},
     Models: {},
     Collections: {},
     Views: {},
-    Components: {},
-    Utils: {},
     Pages: {},
   };
-})(window);
+
+  root.$window = $(window)
+  root.$document = $(document)
+  root.$html = $('html')
+  root.$body = $('body')
+}(window))

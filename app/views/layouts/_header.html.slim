@@ -11,7 +11,7 @@ header.header
       = button_tag 'Compose', type: 'button', class: 'button', data: {toggle: 'modal', target: '#micropost-modal'}
       .user-nav
         .dropdown
-          a.dropdown__toggle href="#" data-toggle="dropdown"
+          a.dropdown__toggle#user href="#" data-toggle="dropdown" data-user=current_user.id
             | Account
             b.caret
           ul.dropdown__menu
